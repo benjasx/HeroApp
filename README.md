@@ -1,12 +1,72 @@
-# React + Vite
+# Heroes SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una Aplicación de Una Sola Página (SPA) construida con React, diseñada para mostrar información sobre varios héroes.
 
-Currently, two official plugins are available:
+## Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **React**: Una librería de JavaScript para construir interfaces de usuario.
+*   **React Router**: Para el enrutamiento declarativo en aplicaciones React.
+*   **Vite**: Una herramienta de construcción rápida que proporciona una experiencia de desarrollo ultrarrápida.
+*   **ESLint**: Para el linting y la calidad del código.
+*   **Query String**: Una librería para analizar y convertir cadenas de consulta URL.
 
-## Expanding the ESLint configuration
+## Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El proyecto está estructurado de la siguiente manera:
+
+*   `src/`: Contiene el código fuente principal de la aplicación.
+    *   `HeroesApp.jsx`: El componente principal de la aplicación.
+    *   `auth/`: Componentes, ayudantes, hooks y páginas relacionados con la autenticación.
+    *   `heroes/`: Componentes, datos, ayudantes, hooks, layouts y páginas relacionados con los héroes.
+    *   `hooks/`: Hooks personalizados de React, como `useForm.jsx`.
+    *   `router/`: Configuración de enrutamiento de la aplicación, incluyendo `AppRouter.jsx`.
+    *   `styles.css`: Estilos globales para la aplicación.
+    *   `ui/`: Componentes y hooks de la interfaz de usuario.
+*   `assets/heroes/`: Contiene imágenes de los héroes.
+*   `public/`: Activos públicos.
+*   `package.json`: Dependencias y scripts del proyecto.
+*   `vite.config.js`: Configuración de Vite.
+
+## Instalación y Ejecución
+
+Para ejecutar este proyecto localmente, sigue estos pasos:
+
+1.  **Clona el repositorio:**
+    ```bash
+    git clone <repository_url>
+    cd heroes-spa
+    ```
+
+2.  **Instala las dependencias:**
+    ```bash
+    npm install
+    # o
+    yarn install
+    ```
+
+3.  **Inicia el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    # o
+    yarn dev
+    ```
+
+    La aplicación estará disponible en `http://localhost:5173` (o en otro puerto si el 5173 está en uso).
+
+4.  **Compila para producción:**
+    ```bash
+    npm run build
+    # o
+    yarn build
+    ```
+
+    Esto creará una carpeta `dist` con la compilación lista para producción.
+
+## Linting
+
+Para ejecutar el linter:
+
+```bash
+npm run lint
+# o
+yarn lint
