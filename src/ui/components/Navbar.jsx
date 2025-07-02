@@ -1,12 +1,17 @@
 import { Link, NavLink, useNavigate } from 'react-router'
-
-
+import { useContext } from 'react'
+import { AuthContext } from '../../auth/'
 export const Navbar = () => {
+    
+    const {user,logout} = useContext(AuthContext);
 
     const navigate = useNavigate();
+
     const onlogout = () => {
+        logout();
         navigate('/login',{replace: true}); 
     }
+
     return (
         <nav className='w-100 p-4 bg-dark'>
             <div className=' container d-flex align-items-center'>
@@ -38,7 +43,7 @@ export const Navbar = () => {
                         </NavLink>
                     </div>
                     <div className='d-flex gap-3 align-items-center'>
-                        <span className="text-primary fs-5">Benja</span>
+                        <span className="text-primary fs-5">{(user) ? user.name : 'no cargo el usuario'}</span>
                         <button className='btn btn-danger' onClick={onlogout}>Logout</button>
                     </div>
                 </div>
